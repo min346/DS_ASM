@@ -2,7 +2,7 @@ import zipfile
 import os
 
 # Specify the path where the zip file is stored
-zip_file_path = 'best_rf_model.joblib.zip'
+zip_file_path = 'best_rf_model.zip'
 
 # Define the directory to extract to
 extract_dir = './'  # Extract to current working directory or specify a path
