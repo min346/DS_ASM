@@ -1,3 +1,22 @@
+import zipfile
+import os
+
+# Specify the path where the zip file is stored
+zip_file_path = 'best_rf_model.joblib.zip'
+
+# Define the directory to extract to
+extract_dir = './'  # Extract to current working directory or specify a path
+
+# Unzip the file
+with zipfile.ZipFile(zip_file_path, 'r') as zip_ref:
+    zip_ref.extractall(extract_dir)
+
+# Check if the file has been extracted
+if os.path.exists('best_rf_model.joblib'):
+    print("File extracted successfully!")
+else:
+    print("File extraction failed!")
+
 import streamlit as st
 import pandas as pd
 from joblib import load
