@@ -35,7 +35,7 @@ exercise_habits = st.selectbox("Exercise Habits", ("Regular", "Occasional", "Non
 smoking = st.selectbox("Smoking", ("Yes", "No"))
 family_heart_disease = st.selectbox("Family Heart Disease", ("Yes", "No"))
 diabetes = st.selectbox("Diabetes", ("Yes", "No"))
-bmi = st.number_input("BMI", min_value=10, max_value=50, value=22.0)
+bmi = st.number_input("BMI", min_value=10.0, max_value=50.0, value=22.0)
 high_blood_pressure = st.selectbox("High Blood Pressure", ("Yes", "No"))
 low_hdl_cholesterol = st.number_input("Low HDL Cholesterol (mg/dL)", min_value=0, max_value=100, value=40)
 high_ldl_cholesterol = st.number_input("High LDL Cholesterol (mg/dL)", min_value=0, max_value=200, value=100)
@@ -45,8 +45,8 @@ sleep_hours = st.number_input("Sleep Hours per Night", min_value=0, max_value=24
 sugar_consumption = st.selectbox("Sugar Consumption", ("High", "Moderate", "Low"))
 triglyceride_level = st.number_input("Triglyceride Level (mg/dL)", min_value=0, max_value=500, value=150)
 fasting_blood_sugar = st.selectbox("Fasting Blood Sugar", ("Normal", "High"))
-crp_level = st.number_input("CRP Level (mg/L)", min_value=0, max_value=10, value=1.0)
-homocysteine_level = st.number_input("Homocysteine Level (µmol/L)", min_value=0, max_value=50, value=10.0)
+crp_level = st.number_input("CRP Level (mg/L)", min_value=0.0, max_value=10.0, value=1.0)
+homocysteine_level = st.number_input("Homocysteine Level (µmol/L)", min_value=0.0, max_value=50.0, value=10.0)
 
 # Convert gender, smoking, etc., to numerical values for model prediction
 gender = 1 if gender == "Male" else 0
@@ -61,8 +61,8 @@ fasting_blood_sugar = 1 if fasting_blood_sugar == "High" else 0
 
 # Prepare the data in the same format as your model expects
 input_data = pd.DataFrame({
-    'Age': [age],
-    'Gender': [gender],
+    'Age': [Age],
+    'Gender': [Gender_Male],
     'Blood Pressure': [blood_pressure],
     'Exercise Habits': [exercise_habits],
     'Smoking': [smoking],
